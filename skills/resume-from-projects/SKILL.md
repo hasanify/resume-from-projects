@@ -1,6 +1,6 @@
 ---
 name: resume-from-projects
-description: Scans a directory of software projects, verifies which ones are the user's own real-world work (not clones, forks, tutorials or popular open-source code), picks the strongest N, and produces a one-page resume as a Word .docx and a PDF. Use when the user says things like "make a resume from my projects", "build a resume from this folder", "pick my best projects for a resume", "turn my GitHub projects into a CV", or "which of my projects should go on my resume".
+description: Turns a folder of software projects into a one-page resume (Word .docx and PDF) in one pass, for freelancers and developers. Verifies which projects are the user's own real-world work (not clones, forks, tutorials or popular open-source code) and picks the strongest N. Use when the user says things like "make a resume from my projects", "build a resume from this folder", "pick my best projects for a resume", "turn my GitHub projects into a CV", "turn my projects into a freelance resume", or "which of my projects should go on my resume".
 ---
 
 # resume-from-projects

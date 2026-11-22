@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="resume-from-projects: your projects, minus the ones you didn't write" width="880">
+  <img src="assets/banner.png" alt="resume-from-projects: turn your project folder into a one-page resume" width="880">
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/output-docx%20%2B%20pdf-111111?style=flat-square" alt="Outputs docx and PDF">
 </p>
 
-An agent skill that reads a folder of software projects, throws out the clones, forks, tutorials and other people's code, ranks what is left, and builds a one-page resume as a Word file and a matching PDF.
+An agent skill for freelancers and developers who need a resume without writing one from scratch. Point it at the folder where your projects live. It keeps the work that is yours, writes the bullets from what the code and git history show, and hands you a one-page Word file and a matching PDF.
 
 It does not invent numbers, write inside your project folders, or send source code anywhere.
 
@@ -19,9 +19,17 @@ It does not invent numbers, write inside your project folders, or send source co
 
 <p align="center"><sub>Sample output, built from <a href="assets/demo/resume.json">assets/demo/resume.json</a>. Every detail is invented, including the person.</sub></p>
 
+## Who it is for
+
+Freelancers who need a CV for a client pitch, a platform profile or an agency application. Developers applying for a role, or tailoring the same projects for several. Anyone whose best work is sitting in a folder and not on a page.
+
+The target role you give it changes which projects rank highest. A freelance backend pitch and a data engineering job application produce different shortlists from the same folder.
+
 ## The problem
 
-Ask an agent to write your resume from your projects and it puts everything on the page: the three tutorial clones, the fork where you fixed one bug, the two experiments you abandoned, and the project you actually shipped, all weighted the same and dressed in numbers nobody can trace.
+You have the work. The resume is the part that stalls. Your projects are spread across folders, some of them tutorials or forks, and turning each one into two clean lines is the task you keep postponing.
+
+Ask an agent to do it and it puts everything on the page: the tutorial clones, the fork where you fixed one bug, the experiments you abandoned, and the project you actually shipped, all weighted the same and dressed in numbers nobody can trace.
 
 This skill checks first. It reads git history, verifies authorship, shows you the shortlist with evidence, and writes nothing until you agree with it.
 
@@ -51,6 +59,10 @@ Claude Code reads `~/.claude/skills/`. Codex, OpenCode, Cursor, Gemini CLI and A
 Requirements: Python 3.8+, `python-docx`, `pypdf`, `pdfplumber`, and LibreOffice. `scripts/check_env.py --install` installs the Python packages and runs the LibreOffice installer when it is missing.
 
 ## Examples
+
+**Build it for freelance work.**
+
+> Turn ~/code into a one-page resume for freelance backend work. Pick projects with real clients and skip anything that started as a tutorial.
 
 **Pick the best automatically.**
 
@@ -147,6 +159,9 @@ python3 scripts/verify_pdf.py "$WORK/out/<name>.pdf" --resume "$WORK/resume.json
 ```
 
 ## FAQ
+
+**Is this for job applications or freelance work?**
+Both. You get a standard one-page resume. Give it a target role for a job application, or the service you sell for a client pitch, and the ranking and summary follow that.
 
 **Does it need my GitHub account?**
 No. It reads local git history and config. Pass your commit email or handle when they differ from your git config. The name-collision search runs through your agent's search tool, and is skipped when the agent has none.
