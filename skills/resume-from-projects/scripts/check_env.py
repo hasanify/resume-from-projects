@@ -27,6 +27,7 @@ def have_font(*names):
 
 def main():
     install = "--install" in sys.argv
+    no_libreoffice = "--no-libreoffice" in sys.argv
     ok = True
 
     print(f"python      {sys.version.split()[0]}")
@@ -69,6 +70,8 @@ def main():
         office = il.find_soffice()
     if office:
         print(f"libreoffice ok ({office})")
+    elif no_libreoffice:
+        print("libreoffice skipped (--no-libreoffice)")
     else:
         print("libreoffice MISSING -> needed for docx to pdf. Run "
               "`python3 scripts/install_libreoffice.py` (or check_env.py --install), "
