@@ -33,6 +33,12 @@ Inspecciona el historial de Git, comprueba la autoría, te muestra la lista de p
 ## Instalación Rápida
 
 ```bash
+npx skills add hasanify/resume-from-projects
+```
+
+O instalación manual con Git:
+
+```bash
 git clone https://github.com/hasanify/resume-from-projects.git
 mkdir -p .agents/skills
 cp -r resume-from-projects/skills/resume-from-projects .agents/skills/

@@ -33,6 +33,12 @@ Git履歴とディレクトリ構成を解析し、あなたのオリジナル�
 ## クイックスタート
 
 ```bash
+npx skills add hasanify/resume-from-projects
+```
+
+または Git での手動インストール：
+
+```bash
 git clone https://github.com/hasanify/resume-from-projects.git
 mkdir -p .agents/skills
 cp -r resume-from-projects/skills/resume-from-projects .agents/skills/

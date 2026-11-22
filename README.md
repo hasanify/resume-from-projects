@@ -76,6 +76,14 @@ Detailed setup for every platform is in [INSTALL.md](INSTALL.md).
 
 ## Quick Start
 
+### One-line install (Recommended)
+
+```bash
+npx skills add hasanify/resume-from-projects
+```
+
+### Or install manually via git
+
 ```bash
 git clone https://github.com/hasanify/resume-from-projects.git
 mkdir -p .agents/skills
