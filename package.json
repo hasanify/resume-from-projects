@@ -31,7 +31,9 @@
   },
   "scripts": {
     "test": "python -m unittest discover -s tests -p \"test_*.py\"",
-    "env:check": "python skills/resume-from-projects/scripts/check_env.py"
+    "env:check": "python skills/resume-from-projects/scripts/check_env.py",
+    "version:bump": "python scripts/bump_version.py",
+    "version:bump:dry": "python scripts/bump_version.py --dry-run"
   },
   "files": [
     "AGENTS.md",
