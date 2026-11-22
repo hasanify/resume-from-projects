@@ -1,6 +1,6 @@
 {
   "name": "resume-from-projects",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Turns a folder of software projects into a verified, evidence-backed one-page resume (Word .docx and PDF). Checks authorship, rejects tutorial forks, and writes bullet points strictly based on real code evidence.",
   "author": {
     "name": "hasanify",

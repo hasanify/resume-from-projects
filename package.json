@@ -1,6 +1,6 @@
 {
   "name": "resume-from-projects",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Agent skill for freelancers and developers to turn a project folder into a verified one-page resume (.docx and PDF).",
   "keywords": [
     "agent-skill",
