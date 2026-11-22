@@ -1,0 +1,19 @@
+---
+description: Generate a verified one-page resume from a folder of software projects
+globs: *
+alwaysApply: false
+---
+
+# Resume from Projects Rule
+
+When the user asks to create, build, or update a resume or CV from local project repositories:
+
+1. **Load the Skill:** Refer to `skills/resume-from-projects/SKILL.md` for complete guidance.
+2. **Safety First:** Never modify or run code inside user project directories. Work in a temporary directory.
+3. **Verify Authorship:** Check git commit authorship and repo manifests before including any project. Filter out tutorials, forks, and toy templates.
+4. **No Inventions:** Do not fabricate numbers, percentages, user counts, or job titles. Every metric must be grounded in repository evidence.
+5. **Execute Pipeline:**
+   - Scan: `python skills/resume-from-projects/scripts/scan_projects.py <DIR> --out <TEMP>/scan.json`
+   - Verify: `python skills/resume-from-projects/scripts/check_origin.py <TEMP>/scan.json --out <TEMP>/verdicts.json`
+   - Rank: `python skills/resume-from-projects/scripts/rank_projects.py <TEMP>/scan.json <TEMP>/verdicts.json --top 5 --out <TEMP>/ranking.json`
+   - Build: `python skills/resume-from-projects/scripts/build_resume.py <TEMP>/resume.json --outdir <TEMP>/out`

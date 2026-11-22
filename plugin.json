@@ -1,0 +1,9 @@
+{
+  "name": "resume-from-projects",
+  "version": "1.0.0",
+  "description": "Turn a folder of software projects into a verified one-page resume (Word .docx and PDF).",
+  "author": "hasanify",
+  "skills": [
+    "skills/resume-from-projects"
+  ]
+}

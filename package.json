@@ -1,0 +1,44 @@
+{
+  "name": "resume-from-projects",
+  "version": "1.0.0",
+  "description": "Agent skill for freelancers and developers to turn a project folder into a verified one-page resume (.docx and PDF).",
+  "keywords": [
+    "agent-skill",
+    "skills",
+    "resume",
+    "cv",
+    "freelance",
+    "claude-code",
+    "codex",
+    "opencode",
+    "cursor",
+    "antigravity",
+    "windsurf",
+    "cline"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "hasanify",
+    "url": "https://github.com/hasanify"
+  },
+  "homepage": "https://github.com/hasanify/resume-from-projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasanify/resume-from-projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hasanify/resume-from-projects/issues"
+  },
+  "scripts": {
+    "test": "python -m unittest discover -s tests -p \"test_*.py\"",
+    "env:check": "python skills/resume-from-projects/scripts/check_env.py"
+  },
+  "files": [
+    "AGENTS.md",
+    "skills/",
+    ".agents/",
+    "LICENSE",
+    "README.md",
+    "INSTALL.md"
+  ]
+}

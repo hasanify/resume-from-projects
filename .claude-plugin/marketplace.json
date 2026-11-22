@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "resume-from-projects",
+  "description": "Turn a folder of software projects into a verified one-page resume (.docx and PDF).",
+  "owner": {
+    "name": "hasanify",
+    "url": "https://github.com/hasanify"
+  },
+  "plugins": [
+    {
+      "name": "resume-from-projects",
+      "description": "Scans projects, verifies authorship against git history, ranks based on technical depth, and compiles a one-page resume without inventing facts or hallucinating metrics.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
