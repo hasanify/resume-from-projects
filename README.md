@@ -14,10 +14,8 @@ An agent skill for freelancers and developers who need a resume without writing 
 It does not invent numbers, write inside your project folders, or send source code anywhere.
 
 <p align="center">
-  <img src="assets/preview.png" alt="A one-page resume built by the skill: name and contact line, summary, four projects with stack and bullets, two jobs, skills and education" width="620">
+  <img src="assets/preview.png" alt="Sample one-page resume built by the skill, with invented details: name and contact line, summary, four projects with stack and bullets, two jobs, skills and education" width="620">
 </p>
-
-<p align="center"><sub>Sample output, built from <a href="assets/demo/resume.json">assets/demo/resume.json</a>. Every detail is invented, including the person.</sub></p>
 
 ## Who it is for
 
