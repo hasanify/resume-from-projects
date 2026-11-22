@@ -1,0 +1,67 @@
+{
+  "name": "Elena Rostova",
+  "contact": {
+    "email": "elena.rostova@example.com",
+    "location": "Berlin, Germany",
+    "github": "https://github.com/erostova",
+    "website": "https://elenarostova.dev"
+  },
+  "summary": "Independent fullstack consultant building reliable web applications, client portals, and SaaS MVPs.",
+  "target_role": "Freelance Fullstack Consultant",
+  "projects": [
+    {
+      "name": "invoice-pilot",
+      "description": "SaaS invoicing platform for European freelancers with automated VAT compliance and PDF generation.",
+      "stack": ["TypeScript", "Next.js", "PostgreSQL", "Prisma", "Tailwind CSS"],
+      "bullets": [
+        "Built a complete invoicing dashboard with React Server Components, server actions, and PDF export",
+        "Implemented multi-tenant authorization using session tokens and Prisma schema models"
+      ],
+      "evidence": [
+        "Next.js RSC and PDF export: app/invoices/page.tsx and lib/pdf-generator.ts",
+        "Prisma multi-tenant models: prisma/schema.prisma tenantId indexes"
+      ]
+    },
+    {
+      "name": "client-portal",
+      "description": "Secure document sharing and approval hub built for a boutique creative agency.",
+      "stack": ["React", "FastAPI", "PostgreSQL", "AWS S3"],
+      "bullets": [
+        "Developed secure file presigned-URL uploads to AWS S3 with cryptographic signature verification",
+        "Shipped responsive admin interface with role-based permissions for clients and project managers"
+      ],
+      "evidence": [
+        "S3 presigned URLs: backend/services/s3_storage.py",
+        "Role permissions: backend/models/users.py UserRole enum"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Independent Software Consultant",
+      "employer": "Self-Employed",
+      "period": "2024 - Present",
+      "bullets": [
+        "Delivered 6 web applications from initial design to cloud deployment for small business clients",
+        "Maintained client codebases, uptime monitoring, and scheduled dependency audits"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "label": "Frontend",
+      "items": ["TypeScript", "React", "Next.js", "Tailwind CSS", "HTML5", "CSS3"]
+    },
+    {
+      "label": "Backend & Cloud",
+      "items": ["Node.js", "Python", "FastAPI", "PostgreSQL", "AWS S3", "Vercel"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc. in Software Engineering",
+      "institution": "Technical University of Munich",
+      "detail": "2020 - 2024"
+    }
+  ]
+}

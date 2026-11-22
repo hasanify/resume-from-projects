@@ -1,0 +1,80 @@
+{
+  "name": "Marcus Vance",
+  "contact": {
+    "email": "marcus.vance@example.com",
+    "location": "Seattle, WA",
+    "github": "https://github.com/marcusvance",
+    "linkedin": "https://linkedin.com/in/marcusvance"
+  },
+  "summary": "Backend engineer specializing in distributed systems, high-throughput APIs, and relational database architecture.",
+  "target_role": "Senior Backend Engineer",
+  "projects": [
+    {
+      "name": "logsift",
+      "description": "Distributed log ingestion and indexing engine designed for low-latency search.",
+      "stack": ["Go", "gRPC", "RocksDB", "Docker"],
+      "bullets": [
+        "Built a concurrent gRPC streaming ingest service backed by RocksDB local storage",
+        "Implemented integration tests with automated data race detection running on every push"
+      ],
+      "evidence": [
+        "gRPC and RocksDB: imported in internal/storage/engine.go",
+        "tests with race detector: Makefile target 'test' runs go test -race ./..."
+      ]
+    },
+    {
+      "name": "shop-api",
+      "description": "Multi-tenant e-commerce API handling catalog management, cart checkouts, and webhooks.",
+      "stack": ["Python", "FastAPI", "PostgreSQL", "Redis"],
+      "bullets": [
+        "Engineered 28 REST endpoints in FastAPI with SQLAlchemy ORM and Alembic migrations",
+        "Added Redis caching for catalog queries and implemented Stripe webhook idempotency handling"
+      ],
+      "evidence": [
+        "28 endpoints: counted route decorators in app/api/v1/",
+        "Redis + Stripe: app/services/cache.py and app/api/v1/webhooks.py"
+      ]
+    },
+    {
+      "name": "queue-relay",
+      "description": "Lightweight message broker bridge syncing events between Kafka and SQS queues.",
+      "stack": ["Rust", "Apache Kafka", "AWS SQS", "Tokio"],
+      "bullets": [
+        "Developed an asynchronous batch consumer in Rust using Tokio and rdkafka",
+        "Configured Docker Compose deployment with integration test suites validating message delivery guarantees"
+      ],
+      "evidence": [
+        "Tokio & rdkafka: Cargo.toml dependencies and src/consumer.rs",
+        "Docker Compose & tests: docker-compose.test.yml and tests/integration.rs"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Backend Software Engineer",
+      "employer": "CloudScale Systems",
+      "period": "2023 - 2026",
+      "bullets": [
+        "Maintained core transaction processing services handling daily financial ledger updates",
+        "Collaborated with frontend and infrastructure engineers to migrate services to containerized Kubernetes clusters"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "label": "Languages",
+      "items": ["Go", "Python", "Rust", "SQL", "Bash"]
+    },
+    {
+      "label": "Databases & Tools",
+      "items": ["PostgreSQL", "Redis", "Docker", "Git", "GitHub Actions", "Kafka"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.S. in Computer Science",
+      "institution": "University of Washington",
+      "detail": "2019 - 2023"
+    }
+  ]
+}
