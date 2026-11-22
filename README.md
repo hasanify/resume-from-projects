@@ -5,6 +5,7 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/github/v/release/hasanify/resume-from-projects?style=flat-square&color=111111&label=release" alt="Release">
   <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
   <img src="https://img.shields.io/badge/python-3.8%2B-111111?style=flat-square" alt="Python 3.8+">
   <img src="https://img.shields.io/badge/output-docx%20%2B%20pdf-111111?style=flat-square" alt="Outputs docx and PDF">
