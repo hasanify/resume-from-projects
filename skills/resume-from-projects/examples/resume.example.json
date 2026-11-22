@@ -1,0 +1,41 @@
+{
+  "paper": "a4",
+  "lang": "en-GB",
+  "name": "Example Person",
+  "contact": {
+    "email": "example@example.com",
+    "phone": "",
+    "location": "City, Country",
+    "github": "github.com/example",
+    "linkedin": "",
+    "website": ""
+  },
+  "summary": "",
+  "projects": [
+    {
+      "name": "Project Name",
+      "url": "github.com/example/project-name",
+      "description": "One plain sentence saying what it does.",
+      "stack": ["Python", "FastAPI", "PostgreSQL"],
+      "bullets": [
+        "Built a REST API with N endpoints in FastAPI backed by PostgreSQL",
+        "Added pytest coverage for the payment flow and ran it on every push with GitHub Actions"
+      ],
+      "evidence": [
+        "N endpoints: counted route decorators in app/routes (grep count)",
+        "pytest + CI: tests/ directory and .github/workflows/ci.yml"
+      ],
+      "merge_desc_stack": false
+    }
+  ],
+  "experience": [
+    {"title": "Job Title", "company": "Company", "dates": "Mon YYYY - Mon YYYY", "bullets": ["Only text the user supplied"]}
+  ],
+  "skills": [
+    {"label": "Languages", "items": ["Python", "SQL"]},
+    {"label": "Tools", "items": ["Docker", "GitHub Actions"]}
+  ],
+  "education": [
+    {"degree": "Degree", "institution": "Institution", "year": "YYYY", "detail": ""}
+  ]
+}
