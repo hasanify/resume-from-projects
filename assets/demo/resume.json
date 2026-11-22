@@ -1,0 +1,109 @@
+{
+  "paper": "a4",
+  "lang": "en-GB",
+  "name": "Alex Rivera",
+  "contact": {
+    "email": "alex@example.com",
+    "phone": "",
+    "location": "Berlin, Germany",
+    "github": "github.com/example",
+    "linkedin": "linkedin.com/in/example",
+    "website": ""
+  },
+  "summary": "Backend engineer who builds payment and logistics systems in Python and Go.",
+  "projects": [
+    {
+      "name": "shop-api",
+      "url": "github.com/example/shop-api",
+      "description": "Order and payment API for a small retail business.",
+      "stack": ["Python", "FastAPI", "PostgreSQL", "Stripe"],
+      "bullets": [
+        "Built the order and checkout API in FastAPI with 24 endpoints, backed by PostgreSQL and Stripe webhooks",
+        "Wrote pytest coverage for refunds and failed payments, and ran the suite on every push with GitHub Actions",
+        "Added structured request logging and a health check endpoint used by the deploy pipeline"
+      ],
+      "evidence": [
+        "24 endpoints: counted route decorators in app/routes",
+        "pytest + CI: tests/ directory and .github/workflows/ci.yml"
+      ],
+      "merge_desc_stack": false
+    },
+    {
+      "name": "logsift",
+      "url": "github.com/example/logsift",
+      "description": "Command-line tool that filters and summarises application logs.",
+      "stack": ["Go", "Cobra", "SQLite"],
+      "bullets": [
+        "Implemented streaming filters that process 1 GB log files without loading them into memory",
+        "Added saved queries and a TUI table view, with 38 tests covering parsing and filter combinations",
+        "Packaged the tool as a single static binary and published Linux and macOS builds with GoReleaser"
+      ],
+      "evidence": [
+        "1 GB files: benchmark in bench/stream_test.go",
+        "38 tests: counted Test functions in the repository"
+      ],
+      "merge_desc_stack": false
+    },
+    {
+      "name": "invoice-tracker",
+      "url": "github.com/example/invoice-tracker",
+      "description": "Self-hosted invoicing app for freelancers, with recurring invoices and PDF export.",
+      "stack": ["Django", "HTMX", "SQLite"],
+      "bullets": [
+        "Built recurring invoice generation with idempotent runs, so a retry never sends a client a duplicate invoice",
+        "Added a PDF export that renders in under a second using WeasyPrint templates",
+        "Built a customer portal with HTMX that updates invoice status without a full page reload"
+      ],
+      "evidence": [
+        "Idempotent runs: tasks/generate.py and its tests",
+        "PDF export: invoices/pdf.py and templates/invoice.html"
+      ],
+      "merge_desc_stack": false
+    },
+    {
+      "name": "webhook-relay",
+      "url": "github.com/example/webhook-relay",
+      "description": "Service that receives carrier webhooks, verifies signatures and forwards events to internal queues.",
+      "stack": ["Node.js", "TypeScript", "Redis", "Docker"],
+      "bullets": [
+        "Built signature verification and retry handling for 6 carrier webhook formats",
+        "Queued failed deliveries in Redis with exponential backoff and a replay command for operators",
+        "Wrote integration tests that run the service against a local Redis and a mock carrier"
+      ],
+      "evidence": [
+        "6 formats: handlers in src/carriers",
+        "Retries: src/queue.ts and its tests"
+      ],
+      "merge_desc_stack": false
+    }
+  ],
+  "experience": [
+    {
+      "title": "Backend Engineer",
+      "company": "Northwind Logistics",
+      "dates": "Mar 2022 - Present",
+      "bullets": [
+        "Maintain the shipment tracking service that handles carrier webhooks and delay notifications",
+        "Moved nightly report generation from cron scripts to a queued worker with retries",
+        "Reviewed schema migrations and on-call runbooks for the tracking service"
+      ]
+    },
+    {
+      "title": "Junior Backend Developer",
+      "company": "Kite Analytics",
+      "dates": "Jul 2021 - Feb 2022",
+      "bullets": [
+        "Built scheduled report exports in Django and moved them from cron to a task queue",
+        "Added pagination and caching to the events API as the underlying tables grew"
+      ]
+    }
+  ],
+  "skills": [
+    {"label": "Languages", "items": ["Python", "Go", "SQL", "TypeScript"]},
+    {"label": "Backend", "items": ["FastAPI", "Django", "PostgreSQL", "Redis"]},
+    {"label": "Tools", "items": ["Docker", "GitHub Actions", "pytest", "Linux"]}
+  ],
+  "education": [
+    {"degree": "BSc Computer Science", "institution": "Technical University of Berlin", "year": "2021", "detail": ""}
+  ]
+}
