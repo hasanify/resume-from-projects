@@ -1,0 +1,62 @@
+name: Bug report
+description: Create a report to help us improve resume-from-projects
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug report! Please provide as much context as possible.
+  - type: dropdown
+    id: agent
+    attributes:
+      label: AI Agent / Harness
+      description: Which agent were you using?
+      options:
+        - Claude Code
+        - Codex
+        - OpenCode
+        - Cursor
+        - Windsurf
+        - Antigravity
+        - Gemini CLI
+        - Cline / Roo Code
+        - Other (specify below)
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Linux (Ubuntu/Debian)
+        - Linux (Arch/Fedora/Other)
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Windows 10/11
+    validations:
+      required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Environment Info
+      description: Python version, LibreOffice version, and packages (`python -m docx --version`, etc.)
+      placeholder: |
+        Python 3.11.4
+        LibreOffice 7.5.3
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug. Include the prompt you gave and the output or error trace.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen instead?
+    validations:
+      required: true
