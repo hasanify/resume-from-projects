@@ -1,0 +1,57 @@
+name: Validate Schema & Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Manifests & Skills
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate all JSON files syntax
+        run: |
+          python -c "
+          import json, glob, sys
+          failed = False
+          for f in glob.glob('**/*.json', recursive=True):
+              try:
+                  with open(f, 'r', encoding='utf-8') as fp:
+                      json.load(fp)
+              except Exception as e:
+                  print(f'Error parsing {f}: {e}', file=sys.stderr)
+                  failed = True
+          if failed:
+              sys.exit(1)
+          print('All JSON files are valid syntax.')
+          "
+
+      - name: Verify SKILL.md Frontmatter & Links
+        run: |
+          python -c "
+          import sys, os
+          skill_path = 'skills/resume-from-projects/SKILL.md'
+          if not os.path.exists(skill_path):
+              print(f'Missing {skill_path}', file=sys.stderr)
+              sys.exit(1)
+          with open(skill_path, 'r', encoding='utf-8') as fp:
+              content = fp.read()
+          if not content.startswith('---'):
+              print('SKILL.md missing YAML frontmatter opening ---', file=sys.stderr)
+              sys.exit(1)
+          print('SKILL.md verified successfully.')
+          "
