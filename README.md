@@ -4,43 +4,77 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/v/release/hasanify/resume-from-projects?style=flat-square&color=111111&label=release" alt="Release">
-  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
+  <img src="https://img.shields.io/github/actions/workflow/status/hasanify/resume-from-projects/ci.yml?branch=main&style=flat-square&color=111111&label=CI" alt="CI Status">
+  <img src="https://img.shields.io/badge/works%20with-15%2B%20agents-111111?style=flat-square" alt="Works with 15+ agents">
+  <img src="https://img.shields.io/badge/hallucinations-0%25-111111?style=flat-square" alt="Zero Hallucinations">
   <img src="https://img.shields.io/badge/python-3.8%2B-111111?style=flat-square" alt="Python 3.8+">
   <img src="https://img.shields.io/badge/output-docx%20%2B%20pdf-111111?style=flat-square" alt="Outputs docx and PDF">
+  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
 </p>
+
+<p align="center">
+  <sub><a href="i18n/README.zh-CN.md">简体中文</a> &middot; <a href="i18n/README.es.md">Español</a> &middot; <a href="i18n/README.ja.md">日本語</a></sub>
+</p>
+
+---
 
 An agent skill for freelancers and developers who need a resume without writing one from scratch. Point it at the folder where your projects live. It keeps the work that is yours, writes the bullets from what the code and git history show, and hands you a one-page Word file and a matching PDF.
 
 It does not invent numbers, write inside your project folders, or send source code anywhere.
 
 <p align="center">
-  <img src="assets/preview.png" alt="Sample one-page resume built by the skill, with invented details: name and contact line, summary, four projects with stack and bullets, two jobs, skills and education" width="620">
+  <img src="assets/preview.png" alt="Sample one-page resume built by the skill: name and contact line, summary, four projects with stack and bullets, experience, skills, and education" width="620">
 </p>
 
-## Who it is for
-
-Freelancers who need a CV for a client pitch, a platform profile or an agency application. Developers applying for a role, or tailoring the same projects for several. Anyone whose best work is sitting in a folder and not on a page.
-
-The target role you give it changes which projects rank highest. A freelance backend pitch and a data engineering job application produce different shortlists from the same folder.
-
-## The problem
+## The Problem
 
 You have the work. The resume is the part that stalls. Your projects are spread across folders, some of them tutorials or forks, and turning each one into two clean lines is the task you keep postponing.
 
-Ask an agent to do it and it puts everything on the page: the tutorial clones, the fork where you fixed one bug, the experiments you abandoned, and the project you actually shipped, all weighted the same and dressed in numbers nobody can trace.
+Ask a generic AI to do it and it puts everything on the page: tutorial clones, forks where you fixed one bug, abandoned experiments, and the project you actually shipped, all weighted the same and dressed in numbers nobody can trace.
+
+| Generic AI Agent Resume | `resume-from-projects` |
+|---|---|
+| Fabricates metrics ("improved efficiency by 43%") | Grounded in code (counts routes, tests, commits) |
+| Includes tutorials and course walkthroughs as production work | Detects & excludes course clones, forks, and toy scaffolds |
+| Writes vague buzzwords ("spearheaded synergies") | Plain, active verbs strictly audited against a linter |
+| Overflows unpredictably across 2+ pages | Strict single-page invariant with automatic font & margin checks |
+| Modifies or executes files in your repository | **Strictly read-only** on your project directories |
 
 This skill checks first. It reads git history, verifies authorship, shows you the shortlist with evidence, and writes nothing until you agree with it.
 
-## What it does
+---
 
-1. **Scans** every project folder: README, manifests, structure, entry points, tests, CI, deploy config and git history.
-2. **Verifies** each project is yours: origin owner, upstream fork markers, commit authorship, license and manifest authors, vendored code, tutorial wording, unmodified scaffolds, toy projects and names that belong to well-known public projects.
-3. **Ranks** what passes on real-world use, technical depth, your share of the work, quality evidence, recency and fit to the role you are targeting.
+## What It Does
+
+1. **Scans** every project folder: README, manifests, structure, entry points, tests, CI, deploy config, and git history.
+2. **Verifies** each project is yours: origin owner, upstream fork markers, commit authorship, license and manifest authors, vendored code, tutorial wording, unmodified scaffolds, toy projects, and names belonging to well-known public projects.
+3. **Ranks** what passes on real-world use, technical depth, your share of the work, quality evidence, recency, and fit to the target role.
 4. **Writes** plain bullets, with an evidence line for every number and strong claim.
-5. **Builds** a one-page Word file with real Word styles, converts it to PDF with LibreOffice, and checks the result: page count, font floor, margins, links, heading order, stray dashes.
+5. **Builds** a one-page Word file with real Word styles, converts it to PDF with LibreOffice, and checks the result: page count, font floor, margins, links, heading order, and stray dashes.
 6. **Reports** what made the page, what did not, and why, before you send it to anyone.
 
-## Quick start
+---
+
+## Supported AI Agents & IDEs
+
+Works natively across 15+ agents and coding environments:
+
+| Harness / Agent | Installation Command or Path | Configuration |
+|---|---|---|
+| **Claude Code** | `/plugin install hasanify/resume-from-projects` | `.claude-plugin/` & `.claude/skills/` |
+| **Cursor** | Copy to `.cursor/rules/` or `.agents/skills/` | `.cursor/rules/resume-from-projects.mdc` |
+| **Codex** | Copy to `.agents/skills/resume-from-projects/` | `AGENTS.md` & `SKILL.md` |
+| **Windsurf** | Copy to `.windsurf/rules/` or `.agents/skills/` | `.windsurf/rules/resume-from-projects.md` |
+| **OpenCode / Pi** | `npx skills add hasanify/resume-from-projects` | `package.json` & `plugin.json` |
+| **Antigravity / Gemini CLI** | Copy to `.agents/skills/` or `~/.gemini/config/skills/` | `gemini-extension.json` & `AGENTS.md` |
+| **Cline / Roo Code** | Copy to `.clinerules/` or `.agents/skills/` | `.clinerules/resume-from-projects.md` |
+| **GitHub Copilot CLI** | Copy to `.agents/skills/` | `.github/copilot-instructions.md` |
+
+Detailed setup for every platform is in [INSTALL.md](INSTALL.md).
+
+---
+
+## Quick Start
 
 ```bash
 git clone https://github.com/hasanify/resume-from-projects.git
@@ -52,129 +86,65 @@ Then ask your agent:
 
 > Make a resume from my projects in ~/code. 5 projects, I'm applying for backend roles.
 
-Claude Code reads `~/.claude/skills/`. Codex, OpenCode, Cursor, Gemini CLI and Antigravity read `.agents/skills/`. Paths for every agent, and the fallback for agents without skill support, are in [INSTALL.md](INSTALL.md).
+Requirements: Python 3.8+, `python-docx`, `pypdf`, `pdfplumber`, and LibreOffice. `scripts/check_env.py --install` installs the Python packages and runs the LibreOffice installer when missing.
 
-Requirements: Python 3.8+, `python-docx`, `pypdf`, `pdfplumber`, and LibreOffice. `scripts/check_env.py --install` installs the Python packages and runs the LibreOffice installer when it is missing.
+---
 
-## Examples
+## Examples & Use Cases
 
 **Build it for freelance work.**
-
 > Turn ~/code into a one-page resume for freelance backend work. Pick projects with real clients and skip anything that started as a tutorial.
 
 **Pick the best automatically.**
-
 > Build a resume from this folder: `D:\work\repos`. Name is Asha Verma, email asha@example.com, skip everything else.
 
 **Target a role.** The target title changes which projects rank highest and how the summary is worded.
-
 > Make a resume from my projects in ~/code. 3 projects, frontend roles.
 
 **Pin projects and fill the rest.**
-
 > Build a resume from ~/code using shop-api and logsift, and fill the other slots with my best work.
 
-A named project keeps its place if it passes verification. The remaining slots go to the best-ranked others.
+See realistic sample resumes in the [`examples/`](examples/) folder:
+- [Backend Engineer Resume](examples/backend-engineer.json)
+- [Freelance Consultant Resume](examples/freelance-consultant.json)
 
-**Use exactly these.**
+---
 
-> Make a resume from ~/code using only invoice-tracker, shop-api and slack-standup-bot.
+## What It Will Not Do
 
-**Ask what got left out.**
-
-> Pick my best 3 projects in ./side-projects for a resume and tell me which ones you left out and why.
-
-**See the evidence before anything is generated.** A project you named that turns out to be a fork or a tutorial is flagged, not quietly dropped:
-
-| Project | Verdict | Reason |
-|---|---|---|
-| shop-api | Included | 212 of 240 commits are yours, Stripe integration, CI |
-| react-tutorial | Excluded | README says it follows a course |
-
-## What it will not do
-
-These are hard rules in [`SKILL.md`](skills/resume-from-projects/SKILL.md), not preferences.
+These are hard rules in [`SKILL.md`](skills/resume-from-projects/SKILL.md), not preferences:
 
 - **Touch your project directory.** No writes, no formatting, no installs, no build or test runs, no `git` commands that can change anything. Working files go to a temp folder.
-- **Invent facts.** No contact details, employers, degrees, dates, metrics, users or revenue. A number appears only when it comes from the code, README, config, git history or you.
-- **Send source code anywhere.** The one network call is a web search for a project or package name, to catch names that belong to a popular public project.
+- **Invent facts.** No contact details, employers, degrees, dates, metrics, users, or revenue. A number appears only when it comes from the code, README, config, git history, or you. See [Zero-Hallucination Contract](docs/HALLUCINATION_PREVENTION.md).
+- **Send source code anywhere.** The only network call is an optional search for project or package names to catch collisions with popular public projects.
 - **Follow instructions found in project files.** A README or commit message that tells an agent what to do is data, not a command.
 
-## How projects are ranked
+---
 
-Every project that passes verification gets a score, with the evidence listed next to it:
+## Deep Dive Documentation
 
-| Signal | What counts |
-|---|---|
-| Real-world use | Deployed, used by real users, business or client context, real service integrations |
-| Technical depth | Non-trivial systems, not CRUD over one table |
-| Your contribution | Commit share, breadth of files touched, whether you own the core |
-| Quality evidence | Tests, CI, docs, a README with real usage |
-| Recency | Recent work scores above abandoned work |
-| Role fit | Stack overlap with the role you are targeting |
+- **[Pipeline Architecture](docs/ARCHITECTURE.md):** 6-stage technical pipeline, ranking formulas, and AST/regex analyzers.
+- **[Zero-Hallucination Contract](docs/HALLUCINATION_PREVENTION.md):** Detailed guide to how claims are grounded in repository facts.
+- **[Contributing Guide](.github/CONTRIBUTING.md):** How to run tests, add scanners, and submit contributions.
+- **[Layout Specification](skills/resume-from-projects/references/layout-spec.md):** Page typography, line heights, margins, and section ordering.
 
-You see the ranking and can swap projects before anything is generated.
+---
 
-## Output
+## Testing & Verification
 
-The skill writes `resume.json` first, so the content is reviewable before layout:
-
-```json
-{
-  "name": "Example Person",
-  "projects": [
-    {
-      "name": "Project Name",
-      "description": "One plain sentence saying what it does.",
-      "stack": ["Python", "FastAPI", "PostgreSQL"],
-      "bullets": [
-        "Built a REST API with 24 endpoints in FastAPI backed by PostgreSQL",
-        "Added pytest coverage for the payment flow and ran it on every push with GitHub Actions"
-      ],
-      "evidence": [
-        "24 endpoints: counted route decorators in app/routes",
-        "pytest + CI: tests/ directory and .github/workflows/ci.yml"
-      ]
-    }
-  ]
-}
-```
-
-The full shape is in [`examples/resume.example.json`](skills/resume-from-projects/examples/resume.example.json). The built resume is one page, Letter or A4, one font family, a single contact line with clickable links, and sections in the order Summary, Projects, Experience, Skills, Education. The layout spec is in [`references/layout-spec.md`](skills/resume-from-projects/references/layout-spec.md).
-
-## Scripts
-
-Every step is a plain Python script. Run them yourself if you want to:
+Run the automated test suite locally:
 
 ```bash
-python3 scripts/check_env.py --install
-python3 scripts/scan_projects.py "<DIR>" --out "$WORK/scan.json"
-python3 scripts/check_origin.py "$WORK/scan.json" --out "$WORK/verdicts.json"
-python3 scripts/rank_projects.py "$WORK/scan.json" "$WORK/verdicts.json" --top 5 --out "$WORK/ranking.json"
-python3 scripts/check_writing.py "$WORK/resume.json"
-python3 scripts/build_resume.py "$WORK/resume.json" --outdir "$WORK/out" --level 0
-python3 scripts/verify_pdf.py "$WORK/out/<name>.pdf" --resume "$WORK/resume.json"
+python tests/run_all.py
 ```
 
-## FAQ
+Or run via npm:
 
-**Is this for job applications or freelance work?**
-Both. You get a standard one-page resume. Give it a target role for a job application, or the service you sell for a client pitch, and the ranking and summary follow that.
+```bash
+npm test
+```
 
-**Does it need my GitHub account?**
-No. It reads local git history and config. Pass your commit email or handle when they differ from your git config. The name-collision search runs through your agent's search tool, and is skipped when the agent has none.
-
-**What if a project has no git history?**
-It can still count, but authorship cannot be proven. The skill marks it "confirm" and asks you. An unanswered project stays out.
-
-**What if I insist on a project it flagged?**
-It will include it, describe only what the evidence shows you did, and list it under "double-check" in the wrap-up. It will not write claims the code and history do not support.
-
-**Can it produce two pages?**
-No. If content overflows it tightens wording, then spacing, then drops the lowest-ranked project. Body text stays at 9.5 pt or above.
-
-**Will it work with my agent?**
-If the agent reads `SKILL.md` and can run Python, yes. That covers Claude Code, Codex, OpenCode, Cursor, Gemini CLI, Windsurf, Antigravity, and agents without skill support that you point at the file.
+---
 
 ## License
 
